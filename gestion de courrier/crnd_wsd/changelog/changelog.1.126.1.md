@@ -1,0 +1,2 @@
+- Display images of services and service groups on website
+- Now the only create-step layout is 'tiles' on website

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_category,access.category,model_menus_list_request_category,,1,1,1,1
+access_dossier,access.dossier,model_menus_list_request_dossier,,1,1,1,1
+access_activity,access.activity,model_menus_list_request_activity,,1,1,1,1
+access_application,access.application,model_menus_list_request_application,,1,1,1,1

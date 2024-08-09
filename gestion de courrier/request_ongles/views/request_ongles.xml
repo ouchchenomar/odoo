@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_request_request_form">
+        <field name="model">request.request</field>
+        <field name="inherit_id" ref="generic_request.view_request_request_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                  <page string="Formulaire de courrier">
+                    <group>
+
+                        <group string="Informations de base" rawspan="2">
+                                <field name="ref_bo"/>
+                                <field name="date_saisie"/>
+                                <field name="org"/>
+                                <field name="date_reception"/>
+                                <field name="application"/>
+                        </group>
+                        <group string="Expéditeur" rawspan="2">
+                                <field name="expediteur"/>
+                                <field name="categorie"/>
+                                <field name="autre_expediteur"/>
+                        </group>
+
+                        <group colspan="2">
+                            <group string="Plan de classement" rawspan="2">
+                                <field name="activite"/>
+                                <field name="dossier"/>
+                            </group>
+                            <group string="Réception" rawspan="2">
+                                <field name="recu_par"/>
+                                <field name="mode_reception"/>
+                                <field name="entite_destinataire"/>
+                                <field name="objet"/>
+                            </group>
+                            <group string="Pièces jointes" rawspan="2">
+                                <field name="nombre_pieces_jointes"/>
+                            </group>
+                        </group>
+                    </group>
+                </page>
+                <page string="Pièces Jointes">
+                    <field name="attachment_ids" options="{'filename': 'name'}"/>
+                </page>
+                <page string="Transfert">
+                    <field name="transfer_activity_ids" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="activity_type_id"/>
+                            <field name="summary"/>
+                            <field name="date_deadline"/>
+                            <field name="res_model"/>
+                            <!-- Add more fields as needed -->
+                        </tree>
+                    </field>
+                    <button name="action_open_activity_form" type="object" string="Ajouter Transfert" class="oe_highlight"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

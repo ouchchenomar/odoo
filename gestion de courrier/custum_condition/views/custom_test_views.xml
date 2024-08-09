@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="generic_condition_test_condition_form" model="ir.ui.view">
+            <field name="name">generic.condition.test_condition.form</field>
+            <field name="model">generic.condition.test_condition</field>
+            <field name="arch" type="xml">
+                <form string="Test Condition">
+                    <sheet>
+                        <group>
+                            <field name="condition_id"/>
+                            <field name="test_as_user_id"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button string="Test" type="object" name="process" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

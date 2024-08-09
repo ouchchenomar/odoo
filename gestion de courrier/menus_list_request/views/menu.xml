@@ -1,0 +1,34 @@
+<odoo>
+    <!-- Actions for the submenus -->
+    <record id="action_category" model="ir.actions.act_window">
+        <field name="name">Categories</field>
+        <field name="res_model">menus_list_request.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_dossier" model="ir.actions.act_window">
+        <field name="name">Dossiers</field>
+        <field name="res_model">menus_list_request.dossier</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_activity" model="ir.actions.act_window">
+        <field name="name">Activities</field>
+        <field name="res_model">menus_list_request.activity</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_application" model="ir.actions.act_window">
+        <field name="name">Application</field>
+        <field name="res_model">menus_list_request.application</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <!-- Submenus under the parent menu -->
+    <menuitem id="menu_category" name="Categories List" parent="generic_request.menu_configuration_requests" sequence="1" action="menus_list_request.action_category"/>
+    <menuitem id="menu_dossier" name="Dossiers List" parent="generic_request.menu_configuration_requests" sequence="2" action="menus_list_request.action_dossier"/>
+    <menuitem id="menu_activity" name="Activities List" parent="generic_request.menu_configuration_requests" sequence="3" action="menus_list_request.action_activity"/>
+    <menuitem id="menu_application" name="Application List" parent="generic_request.menu_configuration_requests" sequence="4" action="menus_list_request.action_application"/>
+</odoo>

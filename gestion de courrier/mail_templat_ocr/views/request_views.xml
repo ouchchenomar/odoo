@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_mail_form_inherited" model="ir.ui.view">
+        <field name="name">mail.template.form.inherit.cin</field>
+        <field name="model">mail.template</field>
+        <field name="inherit_id" ref="mail.email_template_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <group>
+                     <field name="cin"/>
+                     <field name="document_type"/>
+                     <field name="courrier"/>
+                     <button name="extract_text_from_image" string="Mettre à jour depuis l'image" type="object"/>
+
+                </group>
+
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
+

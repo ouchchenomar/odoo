@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit the form view of RequestStage to add a new tab for conditions -->
+        <record id="view_request_stage_form_inherit" model="ir.ui.view">
+            <field name="name">request.stage.form.inherit</field>
+            <field name="model">request.stage</field>
+            <field name="inherit_id" ref="generic_request.view_request_stage_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Conditions">
+                        <group>
+                            <field name="condition_ids" widget="many2many_tags"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit the tree view of RequestStage to add the conditions field -->
+        <record id="view_request_stage_tree_inherit" model="ir.ui.view">
+            <field name="name">request.stage.tree.inherit</field>
+            <field name="model">request.stage</field>
+            <field name="inherit_id" ref="generic_request.view_request_stage_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="inside">
+                    <field name="condition_ids"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit the form view of RequestStageRoute to add a new tab for conditions -->
+        <record id="view_request_stage_route_form_inherit" model="ir.ui.view">
+            <field name="name">request.stage.route.form.inherit</field>
+            <field name="model">request.stage.route</field>
+            <field name="inherit_id" ref="generic_request.view_request_stage_route_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Conditions">
+                        <group>
+                            <field name="condition_ids" widget="many2many_tags"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit the tree view of RequestStageRoute to add the conditions field -->
+        <record id="view_request_stage_route_tree_inherit" model="ir.ui.view">
+            <field name="name">request.stage.route.tree.inherit</field>
+            <field name="model">request.stage.route</field>
+            <field name="inherit_id" ref="generic_request.view_request_stage_route_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="inside">
+                    <field name="condition_ids"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

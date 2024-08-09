@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_request_type_form">
+        <field name="model">request.type</field>
+        <field name="inherit_id" ref="generic_request.view_request_type_form"/>
+        <field name="arch" type="xml">
+            <group name="group_settings_priority" position="inside">
+                <field name="selection_priority_view"/>
+            </group>
+            <group name="group_settings" position="inside">
+                <group name="group_settings_website" string="Website">
+                    <field name="website_request_text_help"/>
+                    <field name="website_request_title"/>
+                    <field name="website_custom_label_editor"/>
+                    <field name="website_custom_congratulation_note"/>
+                </group>
+            </group>
+            <xpath expr="//page[@name='page_classifiers']/field[@name='classifier_ids']/tree/field[@name='category_id']"
+                   position="after">
+                <field name="website_published"/>
+                <field name="website_ids" widget="many2many_tags"/>
+            </xpath>
+            <xpath expr="//page[@name='page_classifiers']/field[@name='classifier_ids']/form//group[@name='group_info_right']"
+                   position="inside">
+                <field name="website_published"/>
+                <field name="website_ids" widget="many2many_tags"/>
+            </xpath>
+        </field>
+    </record>
+
+   <record model="ir.ui.view" id="view_website_service_desk_request_type_form">
+       <field name="model">request.type</field>
+       <field name="inherit_id" ref="generic_request.view_request_type_form"/>
+       <field name="arch" type="xml">
+           <xpath expr="//page[@name='page_write_control']" position="inside">
+                <separator/>
+                <label for="website_comments_closed"/>
+                <field name="website_comments_closed"/>
+                <separator/>
+           </xpath>
+       </field>
+   </record>
+</odoo>

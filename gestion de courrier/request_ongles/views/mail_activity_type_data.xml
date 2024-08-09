@@ -1,0 +1,42 @@
+<odoo>
+    <!-- New activity type "Test" -->
+    <record id="mail_activity_type_test" model="mail.activity.type">
+        <field name="name">Transfer</field>
+        <field name="category">default</field>
+    </record>
+
+    <!-- Modified form view for mail.activity -->
+    <record id="view_mail_activity_form" model="ir.ui.view">
+        <field name="name">mail.activity.form</field>
+        <field name="model">mail.activity</field>
+        <field name="arch" type="xml">
+            <form string="Activity">
+                <sheet>
+                    <group>
+                        <field name="activity_type_id"/>
+                        <field name="summary"/>
+                        <field name="date_deadline"/>
+                        <field name="res_model" invisible="1"/>
+                        <field name="is_test_activity" invisible="1"/>
+                    </group>
+                    <group attrs="{'invisible': [('is_test_activity', '=', False)]}">
+                        <group string="Original">
+                            <field name="next_destination"/>
+                            <field name="final_destination"/>
+                            <field name="next_destinations"/>
+                        </group>
+                        <group string="En Copie">
+                            <field name="hierarchical_way"/>
+                            <field name="urgence"/>
+                            <field name="echeance"/>
+                        </group>
+                        <group>
+                            <field name="type_instruction"/>
+                            <field name="instructions"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

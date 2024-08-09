@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_request_type_form" model="ir.ui.view">
+        <field name="name">request.type.form</field>
+        <field name="model">request.type</field>
+        <field name="inherit_id" ref="generic_request.view_request_type_form"/>
+        <field name="arch" type="xml">
+
+                <xpath expr="//notebook" position="inside">
+                    <page string="Conditions">
+                        <group>
+                            <field name="condition_ids" widget="many2many_tags"/>
+                        </group>
+                    </page>
+                </xpath>
+
+        </field>
+    </record>
+</odoo>
